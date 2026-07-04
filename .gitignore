@@ -1,0 +1,13 @@
+.next
+.vscode
+node_modules
+out
+dist
+coverage
+.env.local
+.env.*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.tsbuildinfo

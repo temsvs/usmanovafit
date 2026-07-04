@@ -1,0 +1,111 @@
+@reference "../../app/globals.css";
+
+.section {
+  @apply w-full bg-[#F3F3F3];
+}
+
+.container {
+  @apply mx-auto flex w-full max-w-6xl flex-col gap-6;
+}
+
+.title {
+  @apply pt-[30px] text-center text-[26px] font-light leading-[1.2] text-black sm:text-[32px];
+}
+
+.group {
+  @apply flex flex-col gap-5;
+}
+
+.groupTitle {
+  @apply pt-[30px] text-center text-[26px] font-light leading-[1.2] text-black sm:text-[32px];
+}
+
+.mobileOnlyBreak {
+  @apply block sm:hidden;
+}
+
+.cardsWrap {
+  @apply mx-auto flex w-full max-w-[560px] flex-col gap-5 pb-[30px];
+}
+
+.cardsWrapLast {
+  @apply pb-[60px];
+}
+
+.card {
+  @apply relative flex flex-row overflow-hidden rounded-[30px] bg-white;
+}
+
+.cardPrimary {
+  @apply border-2 border-[#F66297];
+}
+
+.cardSecondary {
+  @apply border-0;
+}
+
+.media {
+  @apply relative flex min-w-[150px] items-end overflow-hidden bg-transparent;
+  width: var(--program-media-width-mobile, 42%);
+}
+
+.image {
+  @apply block h-auto;
+  width: var(--program-img-width-mobile, 82%);
+  max-height: var(--program-img-max-h-mobile, 240px);
+  object-fit: var(--program-img-fit, cover);
+  transform: translate(
+    var(--program-img-x-mobile, 0px),
+    var(--program-img-y-mobile, 0px)
+    )
+    scale(var(--program-img-scale-mobile, 1));
+  transform-origin: left bottom;
+}
+
+@media (min-width: 1024px) {
+  .media {
+    width: var(--program-media-width-desktop, 44%);
+  }
+
+  .image {
+    width: var(--program-img-width-desktop, 86%);
+    max-height: var(--program-img-max-h-desktop, 320px);
+    transform: translate(
+      var(--program-img-x-desktop, 0px),
+      var(--program-img-y-desktop, 0px)
+      )
+      scale(var(--program-img-scale-desktop, 1));
+  }
+}
+
+.content {
+  @apply flex w-[58%] flex-col items-start gap-3 p-[14px] sm:p-[16px] lg:w-[56%] lg:p-[20px] lg:px-8;
+}
+
+.badge {
+  @apply rounded-full bg-[#f8dbe8] px-[20px] py-[10px] text-[14px] font-semibold leading-none text-[#F66297];
+}
+
+.badgePlain {
+  @apply rounded-none bg-transparent px-0 py-0 text-[#F66297] font-medium;
+}
+
+.cardTitle {
+  @apply text-[18px] font-light leading-[1.2] text-black sm:text-[20px];
+}
+
+.cardTitleSecondLine {
+  @apply inline;
+}
+
+.description {
+  @apply max-w-[520px] text-[14px] font-light leading-[1.4] text-[#555555] sm:text-[16px];
+}
+
+.description strong {
+  @apply font-light text-black text-[#000000];
+}
+
+.button {
+  @apply inline-flex items-center justify-center rounded-full bg-[#F66297] px-[22px] py-[14px] text-[16px] font-medium leading-none text-white transition-colors duration-200 hover:bg-[#ec4b88] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F66297] focus-visible:ring-offset-2 sm:px-[22px] sm:py-[16px] sm:text-[16px];
+}

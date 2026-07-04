@@ -1,0 +1,143 @@
+@reference "../../app/globals.css";
+
+.section {
+  @apply w-full bg-[#F3F3F3] pt-[60px] pb-[60px];
+}
+
+.container {
+  @apply flex w-full flex-col;
+}
+
+.titleWrap {
+  @apply mx-auto w-full max-w-[600px];
+}
+
+.title {
+  @apply text-center text-[22px] font-light leading-[1.2] text-black sm:text-[28px];
+}
+
+.titleAccent {
+  @apply text-[#F66297];
+}
+
+.subtitleWrap {
+  @apply mx-auto mt-4 w-full max-w-[620px];
+}
+
+.subtitle {
+  @apply text-center text-[16px] font-light leading-[1.2] text-black sm:text-[18px];
+}
+
+.advantagesBox {
+  @apply mx-auto mt-2 w-full max-w-[560px] rounded-[24px] bg-white p-[15px] sm:mt-6;
+}
+
+.advantagesList {
+  @apply flex list-none flex-col p-0 m-0;
+}
+
+.advantagesItem {
+  @apply mb-[10px] flex items-start gap-3;
+}
+
+.listIcon {
+  @apply shrink-0;
+}
+
+.advantagesText {
+  @apply pt-1 text-[16px] font-light leading-[1.3] text-black;
+}
+
+.galleryWrap {
+  @apply mx-auto mt-0 w-full max-w-[920px];
+}
+
+.galleryTrack {
+  @apply flex gap-[20px] overflow-x-auto;
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.galleryTrack::-webkit-scrollbar {
+  display: none;
+}
+
+.galleryItem {
+  @apply relative h-[300px] w-[300px] min-w-[300px] overflow-hidden rounded-[30px] border border-[#e6e6e6] bg-[#ececec];
+}
+
+.galleryImage {
+  @apply object-cover;
+}
+
+.customScrollbarWrap {
+  @apply mt-0 w-full;
+}
+
+.customScrollbar {
+  width: 100%;
+  margin: 0;
+  background: transparent;
+  border-radius: 0;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.customScrollbar:disabled {
+  opacity: 0.6;
+}
+
+.customScrollbar::-webkit-slider-runnable-track {
+  height: 8px;
+  background: transparent;
+  border-radius: 0;
+}
+
+.customScrollbar::-webkit-slider-thumb {
+  width: 50px;
+  height: 6px;
+  margin-top: 0;
+  background: #F66297;
+  border: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
+.customScrollbar::-moz-range-track {
+  height: 8px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+.customScrollbar::-moz-range-thumb {
+  width: 76px;
+  height: 6px;
+  background: #F66297;
+  border: none;
+  border-radius: 0;
+}
+
+@media (min-width: 640px) {
+  .customScrollbar::-webkit-slider-thumb {
+    width: 100px;
+  }
+
+  .customScrollbar::-moz-range-thumb {
+    width: 100px;
+  }
+}
+
+.scrollHint {
+  @apply mx-auto flex w-full items-center justify-center gap-2;
+}
+
+.scrollHintText {
+  @apply text-center text-[12px] font-light leading-[1.2] text-[#F66297];
+}
+
+.arrowIcon {
+  @apply shrink-0;
+}

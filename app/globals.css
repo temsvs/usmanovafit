@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+body {
+  @apply bg-white text-black antialiased;
+  font-family: var(--font-gilroy), "Roboto", sans-serif;
+}
+
+.site-container {
+  @apply mx-auto w-full px-4 sm:px-6 lg:px-8;
+  max-width: 1200px;
+}

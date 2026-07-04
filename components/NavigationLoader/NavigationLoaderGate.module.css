@@ -1,0 +1,26 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(1px);
+}
+
+.spinner {
+  width: 64px;
+  height: 64px;
+  border: 5px solid rgba(249, 91, 128, 0.25);
+  border-top-color: #f95b80;
+  border-radius: 9999px;
+  animation: navigationLoaderSpin 0.9s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes navigationLoaderSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}

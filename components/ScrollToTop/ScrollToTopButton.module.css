@@ -1,0 +1,9 @@
+@reference "../../app/globals.css";
+
+.button {
+  @apply fixed bottom-5 right-5 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-[#F66297] text-white shadow-lg transition-opacity duration-200 cursor-pointer;
+}
+
+.icon {
+  @apply text-[24px] leading-none;
+}

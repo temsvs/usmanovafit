@@ -1,0 +1,35 @@
+{
+  "name": "usmanovafit",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page for fitness trainer",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "compress-images": "node scripts/compress-images.mjs",
+    "optimize-images-display": "node scripts/optimize-images-display.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.3.2",
+    "motion": "^12.42.2",
+    "next": "^15.5.20",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^4.3.2"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.0",
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^15.5.20",
+    "sharp": "^0.35.3",
+    "typescript": "^5.7.3"
+  }
+}

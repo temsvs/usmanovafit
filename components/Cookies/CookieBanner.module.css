@@ -1,0 +1,77 @@
+@reference "../../app/globals.css";
+
+.root {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 50px;
+  z-index: 50;
+  width: calc(100% - 60px);
+  max-width: 900px;
+  padding: 22px;
+  border-radius: 20px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 27px 0px #0E232624;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.textWrap {
+  width: 100%;
+}
+
+.text {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 146%;
+  color: #000000;
+}
+
+.buttonWrap {
+  width: fit-content;
+}
+
+.button {
+  padding: 0 16px;
+  border-radius: 24px;
+  border: none;
+  background: #0FF3AF;
+  font-family: "ALS Granate VF", var(--font-gilroy), "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #000000;
+  cursor: pointer;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 767px) {
+  .root {
+    bottom: 75px;
+    left: 15px;
+    right: 15px;
+    width: calc(100% - 30px);
+  }
+}
+
+@media (min-width: 768px) {
+  .text {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
