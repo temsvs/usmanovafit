@@ -13,6 +13,16 @@ body {
   font-family: var(--font-gilroy), "Roboto", sans-serif;
 }
 
+::selection {
+  background-color: #ABB7BD;
+  color: #FFF;
+}
+
+::-moz-selection {
+  background-color: #ABB7BD;
+  color: #FFF;
+}
+
 .site-container {
   @apply mx-auto w-full px-4 sm:px-6 lg:px-8;
   max-width: 1200px;
