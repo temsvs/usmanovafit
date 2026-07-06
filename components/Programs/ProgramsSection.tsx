@@ -15,6 +15,11 @@ import {
   markProgramLoaderShown,
   shouldShowProgramLoader,
 } from "@/lib/program-navigation-loader";
+import {
+  DEVICE_IDS,
+  type DeviceId,
+  type DeviceImageOverride,
+} from "@/lib/device-profiles";
 
 import imgFive from "@/assets/programs/imgFive.png";
 import imgFour from "@/assets/programs/imgFour.png";
@@ -61,6 +66,7 @@ interface ProgramCard {
     desktopX?: string;
     desktopY?: string;
     fit?: "cover" | "contain";
+    deviceOverrides?: Partial<Record<DeviceId, DeviceImageOverride>>;
   };
 }
 
@@ -119,6 +125,9 @@ const homePrograms: ProgramCard[] = [
       desktopX: "10px",
       desktopY: "0px",
       fit: "cover",
+      deviceOverrides: {
+        "iphone-pro": { mobileY: "0px" },
+      }
     },
   },
   {
@@ -324,6 +333,9 @@ const otherGroups: ProgramGroup[] = [
           desktopMediaWidth: "46%",
           desktopX: "10px",
           fit: "cover",
+          deviceOverrides: {
+            "iphone-pro": { mobileY: "-40px" },
+          }
         },
       },
       {
@@ -374,6 +386,10 @@ const otherGroups: ProgramGroup[] = [
           mobileY: "20px",
           desktopMediaWidth: "46%",
           fit: "cover",
+          deviceOverrides: {
+            "iphone-pro": { mobileY: "10px" },
+            "galaxy-s8-plus": { mobileY: "-10px" },
+          }
         },
       },
       {
@@ -449,6 +465,27 @@ export function ProgramsSection() {
     }, PROGRAM_LOADER_DURATION_MS);
   };
 
+  const getDeviceOverrideVars = (
+    overrides?: Partial<Record<DeviceId, DeviceImageOverride>>,
+  ) => {
+    const vars: Record<string, string> = {};
+
+    for (const deviceId of DEVICE_IDS) {
+      const override = overrides?.[deviceId];
+      if (override?.mobileX !== undefined) {
+        vars[`--program-img-x-${deviceId}`] = override.mobileX;
+      }
+      if (override?.mobileY !== undefined) {
+        vars[`--program-img-y-${deviceId}`] = override.mobileY;
+      }
+      if (override?.mobileScale !== undefined) {
+        vars[`--program-img-scale-${deviceId}`] = override.mobileScale;
+      }
+    }
+
+    return vars;
+  };
+
   const getImageStyleVars = (program: ProgramCard) =>
     ({
       "--program-media-width-mobile":
@@ -468,6 +505,7 @@ export function ProgramsSection() {
       "--program-img-x-desktop": program.imageTuning?.desktopX ?? "0px",
       "--program-img-y-desktop": program.imageTuning?.desktopY ?? "0px",
       "--program-img-fit": program.imageTuning?.fit ?? "cover",
+      ...getDeviceOverrideVars(program.imageTuning?.deviceOverrides),
     }) as CSSProperties;
 
   const renderCard = (program: ProgramCard) => {

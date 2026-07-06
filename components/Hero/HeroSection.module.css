@@ -123,11 +123,11 @@
 }
 
 .buttonWrap {
-  @apply w-fit;
+  @apply w-full;
 }
 
 .button {
-  @apply inline-flex w-[370px] items-center justify-center rounded-full bg-[#F66297] px-[40px] py-[30px] text-[16px] font-semibold uppercase tracking-[2px] text-white transition-colors duration-200 hover:bg-[#f24f8a] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F66297] focus-visible:ring-offset-2 lg:w-auto lg:text-[18px];
+  @apply mx-auto inline-flex w-[var(--device-hero-button-width)] max-w-full items-center justify-center rounded-full bg-[#F66297] px-[40px] py-[30px] text-[16px] font-semibold uppercase tracking-[2px] text-white transition-colors duration-200 hover:bg-[#f24f8a] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F66297] focus-visible:ring-offset-2 lg:mx-0 lg:w-auto lg:text-[18px];
 }
 
 .captionWrap {

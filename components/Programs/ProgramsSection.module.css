@@ -34,6 +34,7 @@
 
 .card {
   @apply relative flex flex-row overflow-hidden rounded-[30px] bg-white;
+  min-height: var(--device-card-min-height);
 }
 
 .cardPrimary {
@@ -54,12 +55,83 @@
   width: var(--program-img-width-mobile, 82%);
   max-height: var(--program-img-max-h-mobile, 240px);
   object-fit: var(--program-img-fit, cover);
+  --program-img-x-active: var(--program-img-x-mobile, 0px);
+  --program-img-y-active: var(--program-img-y-mobile, 0px);
+  --program-img-scale-active: var(--program-img-scale-mobile, 1);
   transform: translate(
-    var(--program-img-x-mobile, 0px),
-    var(--program-img-y-mobile, 0px)
+      calc(var(--program-img-x-active) + var(--device-img-x-adjust, 0px)),
+      calc(var(--program-img-y-active) + var(--device-img-y-adjust, 0px))
     )
-    scale(var(--program-img-scale-mobile, 1));
+    scale(
+      calc(var(--program-img-scale-active) * var(--device-img-scale-factor, 1))
+    );
   transform-origin: left bottom;
+}
+
+/* iPhone XR / 11 */
+@media (min-width: 414px) and (max-width: 429px) {
+  .image {
+    --program-img-x-active: var(--program-img-x-iphone-xr, var(--program-img-x-mobile, 0px));
+    --program-img-y-active: var(--program-img-y-iphone-xr, var(--program-img-y-mobile, 0px));
+    --program-img-scale-active: var(
+      --program-img-scale-iphone-xr,
+      var(--program-img-scale-mobile, 1)
+    );
+  }
+}
+
+/* Pixel 7 / S20 Ultra */
+@media (min-width: 411px) and (max-width: 413px) {
+  .image {
+    --program-img-x-active: var(--program-img-x-pixel-7, var(--program-img-x-mobile, 0px));
+    --program-img-y-active: var(--program-img-y-pixel-7, var(--program-img-y-mobile, 0px));
+    --program-img-scale-active: var(
+      --program-img-scale-pixel-7,
+      var(--program-img-scale-mobile, 1)
+    );
+  }
+}
+
+/* iPhone Pro */
+@media (min-width: 390px) and (max-width: 410px) {
+  .image {
+    --program-img-x-active: var(--program-img-x-iphone-pro, var(--program-img-x-mobile, 0px));
+    --program-img-y-active: var(--program-img-y-iphone-pro, var(--program-img-y-mobile, 0px));
+    --program-img-scale-active: var(
+      --program-img-scale-iphone-pro,
+      var(--program-img-scale-mobile, 1)
+    );
+  }
+}
+
+/* iPhone SE */
+@media (min-width: 361px) and (max-width: 389px) {
+  .image {
+    --program-img-x-active: var(--program-img-x-iphone-se, var(--program-img-x-mobile, 0px));
+    --program-img-y-active: var(--program-img-y-iphone-se, var(--program-img-y-mobile, 0px));
+    --program-img-scale-active: var(
+      --program-img-scale-iphone-se,
+      var(--program-img-scale-mobile, 1)
+    );
+  }
+}
+
+/* Galaxy S8+ */
+@media (max-width: 360px) {
+  .image {
+    --program-img-x-active: var(
+      --program-img-x-galaxy-s8-plus,
+      var(--program-img-x-mobile, 0px)
+    );
+    --program-img-y-active: var(
+      --program-img-y-galaxy-s8-plus,
+      var(--program-img-y-mobile, 0px)
+    );
+    --program-img-scale-active: var(
+      --program-img-scale-galaxy-s8-plus,
+      var(--program-img-scale-mobile, 1)
+    );
+  }
 }
 
 @media (min-width: 1024px) {
@@ -71,8 +143,8 @@
     width: var(--program-img-width-desktop, 86%);
     max-height: var(--program-img-max-h-desktop, 320px);
     transform: translate(
-      var(--program-img-x-desktop, 0px),
-      var(--program-img-y-desktop, 0px)
+        var(--program-img-x-desktop, 0px),
+        var(--program-img-y-desktop, 0px)
       )
       scale(var(--program-img-scale-desktop, 1));
   }

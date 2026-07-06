@@ -1,0 +1,62 @@
+:root {
+  --device-card-min-height: auto;
+  --device-img-y-adjust: 0px;
+  --device-img-x-adjust: 0px;
+  --device-img-scale-factor: 1;
+  --device-hero-button-width: 370px;
+}
+
+/* iPhone XR / iPhone 11 */
+@media (min-width: 414px) and (max-width: 429px) {
+  :root {
+    --device-card-min-height: 168px;
+    --device-img-y-adjust: 4px;
+    --device-img-x-adjust: 0px;
+    --device-img-scale-factor: 1.075;
+    --device-hero-button-width: 354px;
+  }
+}
+
+/* Google Pixel 7 / Samsung Galaxy S20 Ultra */
+@media (min-width: 411px) and (max-width: 413px) {
+  :root {
+    --device-card-min-height: 172px;
+    --device-img-y-adjust: 0px;
+    --device-img-x-adjust: -10px;
+    --device-img-scale-factor: 1.076;
+    --device-hero-button-width: 352px;
+  }
+}
+
+/* iPhone 14/15 Pro */
+@media (min-width: 390px) and (max-width: 410px) {
+  :root {
+    --device-card-min-height: 180px;
+    --device-img-y-adjust: 8px;
+    --device-img-x-adjust: -20px;
+    --device-img-scale-factor: 1.24;
+    --device-hero-button-width: 330px;
+  }
+}
+
+/* iPhone SE */
+@media (min-width: 361px) and (max-width: 389px) {
+  :root {
+    --device-card-min-height: 190px;
+    --device-img-y-adjust: 0px;
+    --device-img-x-adjust: -10px;
+    --device-img-scale-factor: 1.2;
+    --device-hero-button-width: 315px;
+  }
+}
+
+/* Samsung Galaxy S8+ */
+@media (max-width: 360px) {
+  :root {
+    --device-card-min-height: 120px;
+    --device-img-y-adjust: 0px;
+    --device-img-x-adjust: -20px;
+    --device-img-scale-factor: 1.3;
+    --device-hero-button-width: 300px;
+  }
+}
